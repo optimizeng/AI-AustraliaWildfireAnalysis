@@ -12,4 +12,6 @@ Map.addLayer(AUS_comp)
 Map.centerObject(AUS_comp,5);
 
 var dataset = ee.ImageCollection('FIRMS').select('T21').filterDate('2019-01-01', '2020-03-31');
-var series = ui.Chart.image.doySeriesByYear(dataset, 'T21', AUS, ee.Redu
+var series = ui.Chart.image.doySeriesByYear(dataset, 'T21', AUS, ee.Reducer.count())
+                                                    .setOptions({
+                                       
