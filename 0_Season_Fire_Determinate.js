@@ -16,4 +16,7 @@ var series = ui.Chart.image.doySeriesByYear(dataset, 'T21', AUS, ee.Reducer.coun
                                                     .setOptions({
                                                       title: 'Number of fires in Australia',
                                                        vAxis: {title: 'Number of Fires'},
-     
+                                                       hAxis: {title: 'Day of Year'}});
+print(series); 
+
+//________FIRMS_____________
