@@ -19,4 +19,6 @@ var series = ui.Chart.image.doySeriesByYear(dataset, 'T21', AUS, ee.Reducer.coun
                                                        hAxis: {title: 'Day of Year'}});
 print(series); 
 
-//________FIRMS_____________
+//________FIRMS______________________
+var FIRMS_AUS = dataset.map(function(firms) { return firms.clip(AUS); });
+var FIRMS_AUS_Total = FIRMS_AUS.filter(ee.Filter.date('2019-01-01','201
