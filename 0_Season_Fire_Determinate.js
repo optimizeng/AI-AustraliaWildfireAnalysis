@@ -27,4 +27,6 @@ Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan- Dec 2019');
 
 //________FIRMS______________________
 var FIRMS_AUS = dataset.map(function(firms) { return firms.clip(AUS); });
-var FIRMS_AUS_Total 
+var FIRMS_AUS_Total = FIRMS_AUS.filter(ee.Filter.date('2020-01-01','2020-02-29')).sum();
+var visTp = {min: 0, max:1000, palette: ['d7385e']};
+Map.addLayer(F
