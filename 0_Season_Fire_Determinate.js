@@ -33,4 +33,5 @@ Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire 2020 Jan-March');
 
 
 //________LEGEND_____________________
-var legend = ui.Panel({style: { po
+var legend = ui.Panel({style: { position: 'middle-right',padding: '8px 15px'}});
+var legendTitle = ui.Label({value: '', style: {fontWeight: 'bold',fontSize: '18px',margin
