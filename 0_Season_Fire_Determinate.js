@@ -40,3 +40,8 @@ var makeRow = function(color, name) {var colorBox = ui.Label({style: {background
      var description = ui.Label({value:name,style: {margin: '0 0 4px 6px'}});
      return ui.Panel({widgets: [colorBox, description],layout: ui.Panel.Layout.Flow('horizontal')});};
 var palette =['0779e4','d7385e'];
+var names = ['Fire 2019','Fire 2020'];
+for (var i = 0; i < 2; i++) {legend.add(makeRow(palette[i], names[i]));}  
+Map.add(legend);
+
+//_______
