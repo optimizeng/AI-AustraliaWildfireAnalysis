@@ -44,4 +44,5 @@ var names = ['Fire 2019','Fire 2020'];
 for (var i = 0; i < 2; i++) {legend.add(makeRow(palette[i], names[i]));}  
 Map.add(legend);
 
-//_______
+//________BASEMAP_____________________
+var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elementType: 'labels.text.fill', sty
