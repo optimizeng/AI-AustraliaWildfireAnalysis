@@ -56,4 +56,6 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'landscape.natural',elementType: 'geometry', stylers: [{color: 'blue'}]},
   {featureType: 'landscape.natural',elementType: 'geometry.fill',stylers: [{color: 'blue'}]},
   {featureType: 'landscape.natural.terrain',elementType: 'geometry.fill',stylers: [{color: 'blue'}]},
-  {featureType: 'poi',elementType: 'geometry',sty
+  {featureType: 'poi',elementType: 'geometry',stylers: [{color: 'red'}]},
+  {featureType: 'poi',elementType: 'labels.text',stylers: [{visibility: 'off'}]},
+  {featureType: 'poi',elementTyp
