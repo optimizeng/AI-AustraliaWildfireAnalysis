@@ -61,4 +61,6 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'poi',elementType: 'labels.text.fill',stylers: [{color: '#93817c'}]},
   {featureType: 'poi.business', stylers: [{visibility: 'off'}]},
   {featureType: 'poi.park',elementType: 'geometry.fill',stylers: [{color: '#a5b076'}]},
-  {featureType: 'poi.park',elementType: 'labels.text.fill'
+  {featureType: 'poi.park',elementType: 'labels.text.fill',stylers: [{color: '#447530'}]},
+  {featureType: 'road',elementType: 'geometry',stylers: [{color: '#f5f1e6'}]},
+  {featureType: 'road',
