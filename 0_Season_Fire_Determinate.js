@@ -63,4 +63,5 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'poi.park',elementType: 'geometry.fill',stylers: [{color: '#a5b076'}]},
   {featureType: 'poi.park',elementType: 'labels.text.fill',stylers: [{color: '#447530'}]},
   {featureType: 'road',elementType: 'geometry',stylers: [{color: '#f5f1e6'}]},
-  {featureType: 'road',
+  {featureType: 'road',elementType: 'labels.icon',stylers: [{visibility: 'off'}]},
+  {featureType: 'road.arterial',elementType: 'geometry',stylers: [{color:
