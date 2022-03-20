@@ -66,4 +66,5 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'road',elementType: 'labels.icon',stylers: [{visibility: 'off'}]},
   {featureType: 'road.arterial',elementType: 'geometry',stylers: [{color: '#fdfcf8'}]},
   {featureType: 'road.highway', elementType: 'geometry',stylers: [{color: '#f8c967'}]},
-  {featureType: 'road.highway',elementTyp
+  {featureType: 'road.highway',elementType: 'geometry.stroke',stylers: [{color: '#e9bc62'}]},
+  {featureType: 'road.highway.controlled_access',elementType: 'geometry',stylers: [{color: '#e9
