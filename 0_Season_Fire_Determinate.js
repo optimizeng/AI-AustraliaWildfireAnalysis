@@ -72,4 +72,5 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'road.local',elementType: 'labels.text.fill',stylers: [{color: '#806b63'}]},
   {featureType: 'transit', stylers: [{visibility: 'off'}]},
   {featureType: 'transit.line', elementType: 'geometry',stylers: [{color: '#dfd2ae'}]},
-  {featureType: 'transit.line',e
+  {featureType: 'transit.line',elementType: 'labels.text.fill',stylers: [{color: '#8f7d77'}]},
+  {featureType: 'transit.line',elementType: 'labels.text.stroke',styl
