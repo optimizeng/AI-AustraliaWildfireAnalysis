@@ -73,4 +73,6 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'transit', stylers: [{visibility: 'off'}]},
   {featureType: 'transit.line', elementType: 'geometry',stylers: [{color: '#dfd2ae'}]},
   {featureType: 'transit.line',elementType: 'labels.text.fill',stylers: [{color: '#8f7d77'}]},
-  {featureType: 'transit.line',elementType: 'labels.text.stroke',styl
+  {featureType: 'transit.line',elementType: 'labels.text.stroke',stylers: [{color: '#ebe3cd'}]},
+  {featureType: 'transit.station',elementType: 'geometry',stylers: [{color: '#dfd2ae'}]},
+  {f
