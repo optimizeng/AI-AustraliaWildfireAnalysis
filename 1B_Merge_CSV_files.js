@@ -1,0 +1,1 @@
+var training = table.merge(table2).merge(table3).merge(table4).merge

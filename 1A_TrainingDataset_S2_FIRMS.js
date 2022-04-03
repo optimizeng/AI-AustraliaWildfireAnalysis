@@ -187,3 +187,51 @@ var FireRandomPointsPro = FireRandomPoints.map(getProperties);
 var FIRMS_season = ee.ImageCollection('FIRMS').select('T21').filterBounds(Australia)
 var FIRMS_season = FIRMS_season.filterDate('2019-09-01','2020-02-22');
 var FIRMS_season_count = ee.Image(FIRMS_season.count())
+
+var FIRMS_binary = FIRMS_season_count.eq(FIRMS_season_count).rename('FIRMS_binary_alert')
+var FIRMS_vector = FIRMS_binary.reduceToVectors({
+  geometry: Australia,
+  scale: 1000,
+  geometryType: 'polygon',
+  eightConnected: false,});
+Map.addLayer(FIRMS_vector,{pallete: '937d14', strokeWidth: 1}, 'FIRMS Hotspots Season Vectorized',0);
+
+var FIRMS_FIRE= FIRMS_season_count.eq(0)
+var FIRMS_NO_FIRE = FIRMS_FIRE.unmask(-9999).clip(Australia)
+var FIRMS_NO_FIRE= FIRMS_NO_FIRE.updateMask(FIRMS_NO_FIRE.eq(-9999))
+
+var no_burnt_vectors = FIRMS_NO_FIRE.reduceToVectors({
+  geometry: Australia,
+  scale: 1000,
+  geometryType: 'polygon',
+  eightConnected: false,
+  maxPixels: 50000000000});
+
+Map.addLayer(no_burnt_vectors.draw({color: 'blue', strokeWidth: 1}),{},'FIRMS No-Fire Area Vectorized', 0);
+var NoFireRandomPoints = ee.FeatureCollection.randomPoints(no_burnt_vectors,300);
+
+var getProperties = function(feature) {var point = feature.geometry();
+  return ee.Feature(point).set('Start_Date',Start_I).set('fire',0)};
+
+var NoFirePointsPro = NoFireRandomPoints.map(getProperties);
+//Map.addLayer(NoFirePointsPro,{color:'green'},'No-Fire Random Points', 0);
+
+//_____Merge Teaining Points______________________________-
+var combinedFeatureCollection = NoFirePointsPro.merge(FireRandomPointsPro);
+
+Export.table.toDrive({
+  collection: combinedFeatureCollection,
+  description:'AUS_Sep_Part_1',
+  fileFormat: 'CSV'});
+
+// Load CSV file of australian fire/no-fire points for checking
+var point = ee.FeatureCollection("users/sulovaandrea/TrainingDataset")
+print('Number fo training dataset: ', point.size())
+
+var No_fire_point = point.filterMetadata("fire","equals",0)
+Map.addLayer(No_fire_point, {color:'649d66',size:1}, 'No-Fire Points',1);
+
+var active_fire_point = point.filterMetadata("fire","equals",1)
+Map.addLayer(active_fire_point, {color:'ffd31d',size:1}, 'Active Fire Points',1);
+
+Map.addLayer(ActiveFire, {palette: 'd63447'}, 'Active Fire S2',0);
