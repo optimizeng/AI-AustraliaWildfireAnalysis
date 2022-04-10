@@ -1,1 +1,2 @@
-var training = table.merge(table2).merge(table3).merge(table4).merge
+var training = table.merge(table2).merge(table3).merge(table4).merge(table5).merge(table6).merge(table7).merge(table8).merge(table9)
+            .merge(table10).merge(table11).merge(table12).merge(table13)
