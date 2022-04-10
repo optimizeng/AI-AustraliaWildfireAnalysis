@@ -7,4 +7,6 @@ Export.table.toDrive({
   fileFormat: 'CSV'});              
 
 var active = training.filterMetadata("fire","equals",1)
-var no
+var nofire = training.filterMetadata("fire","equals",0)
+Map.addLayer(active,{color: 'red', strokeWidth: 2}, 'active',1);
+print('N
