@@ -9,4 +9,6 @@ Export.table.toDrive({
 var active = training.filterMetadata("fire","equals",1)
 var nofire = training.filterMetadata("fire","equals",0)
 Map.addLayer(active,{color: 'red', strokeWidth: 2}, 'active',1);
-print('N
+print('Number of fire points:',active.size())
+Map.addLayer(nofire,{color: 'green', strokeWidth: 2}, 'nofire',1);
+print('Number of no-fire points:'
