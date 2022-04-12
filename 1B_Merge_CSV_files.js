@@ -11,4 +11,6 @@ var nofire = training.filterMetadata("fire","equals",0)
 Map.addLayer(active,{color: 'red', strokeWidth: 2}, 'active',1);
 print('Number of fire points:',active.size())
 Map.addLayer(nofire,{color: 'green', strokeWidth: 2}, 'nofire',1);
-print('Number of no-fire points:'
+print('Number of no-fire points:',nofire.size())
+var Australia = ee.FeatureCollection("users/sulovaandrea/Australia_Polygon");
+Map.centerObject(Australia,6) 
