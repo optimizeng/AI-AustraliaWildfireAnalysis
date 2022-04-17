@@ -109,3 +109,120 @@ Map.addLayer(Cost_ele_1km, {min: 0, max: 1, palette: palette2}, 'Electric Line R
 // 7 Human Modification - 1km
 //https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification#description
 var GHM = ee.ImageCollection("CSP/HM/GlobalHumanModification")
+var GHM_index = GHM.mean().clip(Australia)
+var palette_GHM = ['85a392','#C7B808','#4E8E07','26D5F6','DDCC09','#16089C']
+Map.addLayer(GHM_index, {min:0, max:1, palette:palette_GHM}, 'Global Human Modification',0);
+
+// 8 MODIS NDVI 250m
+var dataset = ee.ImageCollection('MODIS/006/MOD13Q1').filter(ee.Filter.date('2019-08-01', '2019-09-01'));
+var ndvi = dataset.select('NDVI').mean().clip(Australia);;
+var ndviVis = { min: 0.0, max: 8000.0,palette: ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01', '012E01', '011D01', '011301'],};
+Map.addLayer(ndvi, ndviVis, 'NDVI 250 MODIS',0);
+
+// 9 Soil Depth SLGA: Soil and Landscape Grid of Australia (Soil Attributes)
+// 90m Depth of soil profile (A & B horizons)
+var dataset = ee.ImageCollection('CSIRO/SLGA').filter(ee.Filter.eq('attribute_code', 'DES'));
+var soilDepth = dataset.select('DES_000_200_EV').mosaic().clip(Australia);
+var soilDepthVis = {min: 0, max: 2, palette: ['252525', 'f1ab86', 'c57b57', '1E2D2F', '041F1E'],};
+Map.addLayer(soilDepth, soilDepthVis, 'Soil Depth',0);
+
+// 11 Climate - WIND SPEED 2.5 arc minutes more then 2km
+//https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var vs = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var vs = vs.select('vs').reduce(ee.Reducer.mean()).clip(Australia);
+var vsVis = { min:100,max: 400,palette: ['F7F3F0','DFDFDF','496A81','1E96FC','00171F'],};
+Map.addLayer(vs, vsVis, 'Wind-speed at 10m Scale 0,01',0);
+
+// 12 Maximum temperature  2.5 arc minutes more then 2km
+//https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var temp_max = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var temp_max = temp_max.select('tmmx').reduce(ee.Reducer.mean()).clip(Australia);
+var vsVis = { min: 200,max: 400,palette: ['F9EBE0','F5E663','E3B505','F18805','EA2B1F','550527'],};
+Map.addLayer(temp_max, vsVis, 'Maximum temperature  Scale 0,1',0);
+
+// 13 Palmer Drought Severity Index https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var Drought_Palmer= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var Drought_Palmer = Drought_Palmer.select('pdsi').reduce(ee.Reducer.mean()).clip(Australia);
+var DroughVis = { min:-300,max: 100,palette: ['40C778','6D855D','C0BEA0','CD947B','E5E6E4'],};
+Map.addLayer(Drought_Palmer, DroughVis, 'Palmer Drought Severity Index', 0);
+
+// 14 Precipitation accumulation https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var Precipitation= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2019-08-01', '2020-02-15'));
+var Precipitation = Precipitation.select('pr').reduce(ee.Reducer.mean()).clip(Australia);
+var PrecipVIS = { min:0 ,max: 70, palette: ['EEF4ED','8DA9C4','00A8E8','007EA7','003459','00171F'],};
+Map.addLayer(Precipitation, PrecipVIS, 'Precipitation accumulation mm',0);
+
+// 15 Soil Moisture https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var Soil_Moisture= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2019-01-01', '2019-08-31'));
+var Soil_Moisture = Soil_Moisture.select('soil').reduce(ee.Reducer.mean()).clip(Australia);
+var PrecipVIS = { min:0 ,max:600, palette: ['EEF4ED','8DA9C4','00A8E8','007EA7','003459','00171F'],};
+Map.addLayer(Soil_Moisture, PrecipVIS, 'Soil moisture Scale 0.1',0);
+
+//______M E R G E ____ A L L___ V A R I A B L E S __________________________________________________    
+
+var merge = LandCover.addBands(elevation).addBands(slope).addBands(aspect).addBands(GHM_index)
+      .addBands(pop_100m).addBands(Soil_Moisture).addBands(Cost_road_1km).addBands(Cost_ele_1km)
+      .addBands(ndvi).addBands(soilDepth).addBands(vs).addBands(temp_max).addBands(Drought_Palmer).addBands(Precipitation)
+                
+var merge = merge.select(
+['discrete_classification', 'elevation', 'slope', 'aspect', 'gHM', 'population', 'soil_mean', 'cumulative_cost','constant','NDVI', 'DES_000_200_EV', 'vs_mean', 'tmmx_mean', 'pdsi_mean', 'pr_mean'],
+['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modification', 'Population', 'Soil Moisture', 'Distance From Road', 'Electric Network', 'NDVI', 'Soil Depth', 'Wind Speed', 'Temperature', 'Drought','Precipitation'])
+
+var bands= ['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modification', 'Population', 'Soil Moisture', 'Distance From Road', 'Electric Network', 'NDVI', 'Soil Depth', 'Wind Speed', 'Temperature', 'Drought','Precipitation']
+
+//____R A N D O M __F O R E S T__C L A S S I F I C A T I O N ____________________________________________________      
+
+var point = ee.FeatureCollection("users/sulovaandrea/TrainingDataset")
+
+var active_fire_point = point.filterMetadata("fire","equals",1)
+Map.addLayer(active_fire_point, {color:'orange',size:0.1}, 'Active Fire Points',0);
+var No_fire_point = point.filterMetadata("fire","equals",0)
+Map.addLayer(No_fire_point, {color:'black',size:0.1}, 'No-Fire Points',0);
+
+var classifierTraining = merge.sampleRegions(
+            {collection: point,
+            properties: ['fire'],
+            scale: 100});
+                  
+//print('Number of trained samples: ', classifierTraining.size())
+
+// Make a Random Forest classifier and train it.
+var RF_classifier = ee.Classifier.smileNaiveBayes(1).train(
+                    {features:classifierTraining,
+                    classProperty:'fire',inputProperties: bands});
+  
+var classification = merge.classify(RF_classifier);
+Map.addLayer(classification, {min: 0, max: 1, palette: ['green', 'red']},'classification', 0);    
+ 
+var classifier_Pro = ee.Classifier.smileNaiveBayes(1).setOutputMode('PROBABILITY').train(classifierTraining,"fire"); 
+var classification_Pro = merge.classify(classifier_Pro);
+Map.addLayer(classification_Pro, {min: 0, max: 1, palette: ['green', 'red']},'classification_Pro', 0);   
+
+                  
+//_____ A C C U R A C Y___ A S S E S S M E N T_________________________________________________  
+
+var split = 0.7;  // Roughly 70% training, 30% testing.
+var classifierTraining= classifierTraining.randomColumn();
+var trained = classifierTraining.filter(ee.Filter.lt('random', split));
+var test = classifierTraining.filter(ee.Filter.gte('random', split));
+//print('Number of training dataset: ', trained.size())
+//print('Number of test dataset: ', test.size())
+
+var classifier_trained = ee.Classifier.smileNaiveBayes(1).train
+                          ({features:trained,
+                          classProperty:'fire',
+                          inputProperties: bands});
+                          
+var test_classification = test.classify(classifier_trained)
+var confusionMatrix =test_classification.errorMatrix('fire','classification');    
+var confusionMatrixArray = ee.Feature(null, {matrix: confusionMatrix.array()});
+print('Confusion Matrix:', confusionMatrixArray);
+var overAccuracy = ee.Feature(null, {matrix: confusionMatrix.accuracy()});
+print('Overal Accuracy:', overAccuracy)
+//var prodAccuracy = ee.Feature(null,{matrix:confusionMatrix.producersAccuracy()})
+//print('Producers Accuracy:', prodAccuracy)
+//var consAccuracy = ee.Feature(null,{matrix:confusionMatrix.consumersAccuracy()});
+//print('Consumers Accuracy:', consAccuracy)
+var kappa = ee.Feature(null, {matrix: confusionMatrix.kappa()});
+print(' kappa:', kappa)
