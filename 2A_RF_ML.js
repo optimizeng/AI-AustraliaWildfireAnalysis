@@ -283,3 +283,49 @@ var Pro ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#e5ee5a" quantity="0.41" label="0.60"/>' +    
       '<ColorMapEntry color="#d39b56" quantity="0.61" label="0.80"/>' +    
       '<ColorMapEntry color="#f62008" quantity="0.81" label="0.9999"/>' +
+      '<ColorMapEntry color="#f62008" quantity="0.99991" label="0.99999"/>' +
+    '</ColorMap>' +
+  '</RasterSymbolizer>';
+Map.addLayer(RF_Classs_Pro.sldStyle(Pro), {}, 'classifier_legend',1);
+
+var legend = ui.Panel({style: {position: 'middle-right',padding: '8px 15px'}});
+var legendTitle = ui.Label({value: 'Fire Probability',style: {fontWeight: 'bold' ,fontSize: '12px', margin: '2px',padding: '2px'}});
+legend.add(legendTitle);
+
+//_______Creates and styles 1 row of the legend______________________
+var Row = function(color, name) 
+      {var colorBox = ui.Label({style: { backgroundColor: color, padding: '8px', margin: '0 0 4px 0'}});
+      var description = ui.Label({value: name,style: {margin: '0 0 2px 3px'}});
+      return ui.Panel({widgets: [colorBox, description],layout: ui.Panel.Layout.Flow('horizontal')})};
+
+var palette =['#2e651b', '#55a13b', '#e5ee5a', '#d39b56', '#f62008'];
+
+var names = ['Very Low (0% - 20%)',' Low (21% - 40%)','Medium (41% - 60%)', 'High (61% - 80%)','Very High (80% - 100%)']
+
+for (var i = 0; i <5; i++) {
+  legend.add(Row(palette[i], names[i]));}  
+Map.add(legend);
+
+//_________Basemap________________________
+var mapStyle = [
+  {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
+  {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+  {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+  {featureType: 'administrative',elementType: 'geometry.stroke',stylers: [{color: '#c9b2a6'}] },
+  {featureType: 'administrative.land_parcel',elementType: 'geometry.stroke',stylers: [{color: '#dcd2be'}]},
+  {featureType: 'administrative.land_parcel',elementType: 'labels.text.fill',stylers: [{color: '#ae9e90'}]},
+  {featureType: 'administrative.land_parcel',  elementType: 'labels.text.stroke',stylers: [{color: '#000040'}, {visibility: 'simplified'}]}, 
+  {featureType: 'administrative.neighborhood',elementType: 'labels.text.fill',stylers: [{color: '#408080'}]},
+  {featureType: 'landscape.man_made',elementType: 'geometry.fill',stylers: [{color: '#800040'}]}, 
+  {featureType: 'landscape.natural',  elementType: 'geometry',stylers: [{color: 'blue'}]},
+  {featureType: 'landscape.natural',elementType: 'geometry.fill',stylers: [{color: 'blue'}]},
+  {featureType: 'landscape.natural.terrain',elementType: 'geometry.fill', stylers: [{color: 'blue'}]},
+  {featureType: 'road',elementType: 'geometry',stylers: [{color: '#f5f1e6'}]},
+  {featureType: 'road.highway',elementType: 'geometry',stylers: [{color: '#f8c967'}]},
+  {featureType: 'road.highway',elementType: 'geometry.stroke',stylers: [{color: '#e9bc62'}]},
+  {featureType: 'road.local',elementType: 'labels.text.fill',stylers: [{color: '#806b63'}]},
+  {featureType: 'water', elementType: 'geometry.fill',stylers: [{color: '#b9d3c2'}] }, 
+  {featureType: 'water',elementType: 'labels.text.fill',stylers: [{color: 'blue'}]}];
+
+Map.setOptions('mapStyle', {mapStyle: mapStyle});
+
