@@ -2,4 +2,6 @@
 //AUthor: Andrea Sulova;
 //Date: March 2020;
 
-//______Import
+//______Import SHP Australian's States__________________________________________
+var Australia_shp = ee.FeatureCollection("users/sulovaandrea/Australia_Polygon");
+var A
