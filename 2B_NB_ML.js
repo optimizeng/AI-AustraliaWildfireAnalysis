@@ -226,3 +226,18 @@ print('Overal Accuracy:', overAccuracy)
 //print('Consumers Accuracy:', consAccuracy)
 var kappa = ee.Feature(null, {matrix: confusionMatrix.kappa()});
 print(' kappa:', kappa)
+
+//____V A R I A B L E______ I M P O R T A N C E_____________________________________    
+var dict = classifier_Pro.explain();
+print('Explain:',dict);
+
+var variable_importance = ee.Feature(null, ee.Dictionary(dict).get('importance'));
+ 
+var chart = ui.Chart.feature.byProperty(variable_importance).setChartType('ColumnChart')
+          .setOptions({title: 'Random Forest Variable Importance',
+          legend: {position: 'none'},
+          hAxis: {title: 'Bands'},vAxis: {title: 'Importance'}});
+print(chart);
+
+
+
