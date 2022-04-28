@@ -4,4 +4,8 @@
 
 //______Import SHP Australian's States__________________________________________
 var Australia_shp = ee.FeatureCollection("users/sulovaandrea/Australia_Polygon");
-var A
+var Australia_shp_geometry = Australia_shp.geometry();
+
+
+//______Import States in Australia____________________________________________
+var Capi
