@@ -9,4 +9,5 @@ var Australia_shp_geometry = Australia_shp.geometry();
 
 //______Import States in Australia____________________________________________
 var Capital_AUS = Australia_shp.filterMetadata("name","equals","Australian Capital Territory");
-var Northen_AUS = Australia_shp.filterMetadata("cc"
+var Northen_AUS = Australia_shp.filterMetadata("cc","equals","Northern Territory")
+var Queensland = Australia_shp.filterMetadata("name","equals","Queensland
