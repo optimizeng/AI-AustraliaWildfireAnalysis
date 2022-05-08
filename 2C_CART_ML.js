@@ -19,4 +19,8 @@ var NewSouthWales = Australia_shp.filterMetadata("name","equals","New South Wale
 
 //______AOI_____________________________________________________________________
 var Australia = ee.FeatureCollection("USDOS/LSIB/2013").filterMetadata("cc","equals","AS")
-Map.centerObject
+Map.centerObject(Australia,4);   
+
+//______VARIABLES_______________________________________________________________
+// 1 LandCover
+// COPERNICUS LAND COVE
