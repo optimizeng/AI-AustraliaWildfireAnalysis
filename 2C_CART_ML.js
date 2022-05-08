@@ -14,4 +14,7 @@ var Queensland = Australia_shp.filterMetadata("name","equals","Queensland")
 var South_AUS = Australia_shp.filterMetadata("name","equals","South Australia")
 var Tasmania = Australia_shp.filterMetadata("name","equals","Tasmania")
 var Victoria = Australia_shp.filterMetadata("name","equals","Victoria")
-var Western_AUS = Austral
+var Western_AUS = Australia_shp.filterMetadata("name","equals","Western Australia")
+var NewSouthWales = Australia_shp.filterMetadata("name","equals","New South Wales")
+
+//______AOI_
