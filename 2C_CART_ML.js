@@ -12,4 +12,6 @@ var Capital_AUS = Australia_shp.filterMetadata("name","equals","Australian Capit
 var Northen_AUS = Australia_shp.filterMetadata("cc","equals","Northern Territory")
 var Queensland = Australia_shp.filterMetadata("name","equals","Queensland")
 var South_AUS = Australia_shp.filterMetadata("name","equals","South Australia")
-var Tasmania = Australia_shp.filterM
+var Tasmania = Australia_shp.filterMetadata("name","equals","Tasmania")
+var Victoria = Australia_shp.filterMetadata("name","equals","Victoria")
+var Western_AUS = Austral
