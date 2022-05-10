@@ -25,4 +25,5 @@ Map.centerObject(Australia,4);
 // 1 LandCover
 // COPERNICUS LAND COVER forest_type Class Table: 
 //https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_Landcover_100m_Proba-V_Global#bands
-var Lan
+var LandCover =ee.ImageCollection("COPERNICUS/Landcover/100m/Proba-V/Global")
+var LandCover = LandCover.select('discrete_classification'
