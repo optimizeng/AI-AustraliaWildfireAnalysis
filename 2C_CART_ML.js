@@ -23,4 +23,6 @@ Map.centerObject(Australia,4);
 
 //______VARIABLES_______________________________________________________________
 // 1 LandCover
-// COPERNICUS LAND COVE
+// COPERNICUS LAND COVER forest_type Class Table: 
+//https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_Landcover_100m_Proba-V_Global#bands
+var Lan
