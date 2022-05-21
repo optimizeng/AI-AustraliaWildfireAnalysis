@@ -29,4 +29,5 @@ var LandCover =ee.ImageCollection("COPERNICUS/Landcover/100m/Proba-V/Global")
 var LandCover = LandCover.select('discrete_classification').mosaic().clip(Australia);
 var Classes ='<RasterSymbolizer>'+
       '<ColorMap type = "intervals" extended="false" >' +
-      '<ColorMapEntry 
+      '<ColorMapEntry color="#0779e4" quantity="11" label="11 - Irrigated croplands"/>' +
+      '<ColorMapEntry color="#f6f578" quantity="14" label="14 - R
