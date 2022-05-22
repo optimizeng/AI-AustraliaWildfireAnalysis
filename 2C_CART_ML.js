@@ -32,4 +32,5 @@ var Classes ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#0779e4" quantity="11" label="11 - Irrigated croplands"/>' +
       '<ColorMapEntry color="#f6f578" quantity="14" label="14 - Rainfed croplands"/>' +  
       '<ColorMapEntry color="#f6d743" quantity="20" label="20 - Mosaic Croplands/Vegetation"/>' +  
-      '<Col
+      '<ColorMapEntry color="#fcbf1e" quantity="30" label="30 - Mosaic Vegetation/Croplands"/>' +    
+      '<ColorMapEntry color="#06623b"
