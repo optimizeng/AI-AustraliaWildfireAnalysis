@@ -30,4 +30,6 @@ var LandCover = LandCover.select('discrete_classification').mosaic().clip(Austra
 var Classes ='<RasterSymbolizer>'+
       '<ColorMap type = "intervals" extended="false" >' +
       '<ColorMapEntry color="#0779e4" quantity="11" label="11 - Irrigated croplands"/>' +
-      '<ColorMapEntry color="#f6f578" quantity="14" label="14 - R
+      '<ColorMapEntry color="#f6f578" quantity="14" label="14 - Rainfed croplands"/>' +  
+      '<ColorMapEntry color="#f6d743" quantity="20" label="20 - Mosaic Croplands/Vegetation"/>' +  
+      '<Col
