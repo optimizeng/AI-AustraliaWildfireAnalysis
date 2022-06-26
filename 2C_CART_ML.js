@@ -38,4 +38,5 @@ var Classes ='<RasterSymbolizer>'+
        '<ColorMapEntry color="#94fc13" quantity="60" label="60 - Open broadleaved deciduous forest"/>' +    
       '<ColorMapEntry color="#75b79e" quantity="70" label="70 - Closed needleleaved evergreen forest"/>' +  
       '<ColorMapEntry color="#a7e9af" quantity="90" label="90 - Open neepdleleaved deciduous or evergreen forest"/>' +
-      '<ColorMapEntry color="#698474" quantity="100" labe
+      '<ColorMapEntry color="#698474" quantity="100" label="100 - Closed to open mixed broadleaved and needleleaved forest "/>' +    
+      '<ColorMapEntry color="#00bdaa" quantity="110" la
