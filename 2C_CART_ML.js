@@ -42,4 +42,6 @@ var Classes ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#00bdaa" quantity="110" label="110 - Mosaic Forest-Shrubland/Grassland"/>' +    
       '<ColorMapEntry color="#565d47" quantity="120" label="120 - Mosaic Grassland/Forest-Shrubland"/>' +  
       '<ColorMapEntry color="#ff926b" quantity="130" label="130 - Closed to open shrubland"/>' +
-      '<ColorMapEntry 
+      '<ColorMapEntry color="#ffc38b" quantity="140" label="140 - Closed to open grassland"/>' +
+      '<ColorMapEntry color="#fff3cd" quantity="150" label="150 - Sparse vegetation"/>' +    
+ 
