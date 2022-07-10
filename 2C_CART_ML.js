@@ -48,4 +48,6 @@ var Classes ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#bbded6" quantity="170" label="170 - Closed broadleaved forest permanently flooded (saline-brackish water)"/>' +  
       '<ColorMapEntry color="#30e3ca" quantity="180" label="180 - Closed to open vegetation regularly flooded"/>' +
       '<ColorMapEntry color="#e84545" quantity="190" label="190 - Artificial areas "/>' +    
-      '<ColorMapEntry color="#e3fdfd" quantity="200" label
+      '<ColorMapEntry color="#e3fdfd" quantity="200" label="200 - Bare areas"/>' +    
+      '<ColorMapEntry color="#3f72af" quantity="210" label="210 - Water bodies"/>' +  
+      '<Co
