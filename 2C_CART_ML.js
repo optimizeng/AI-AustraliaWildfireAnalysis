@@ -50,4 +50,5 @@ var Classes ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#e84545" quantity="190" label="190 - Artificial areas "/>' +    
       '<ColorMapEntry color="#e3fdfd" quantity="200" label="200 - Bare areas"/>' +    
       '<ColorMapEntry color="#3f72af" quantity="210" label="210 - Water bodies"/>' +  
-      '<Co
+      '<ColorMapEntry color="#f5f5f5" quantity="220" label="220 - Permanent snow and ice "/>' +
+      '<ColorMapEntry color="#252a34" quantity
