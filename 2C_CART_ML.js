@@ -51,4 +51,9 @@ var Classes ='<RasterSymbolizer>'+
       '<ColorMapEntry color="#e3fdfd" quantity="200" label="200 - Bare areas"/>' +    
       '<ColorMapEntry color="#3f72af" quantity="210" label="210 - Water bodies"/>' +  
       '<ColorMapEntry color="#f5f5f5" quantity="220" label="220 - Permanent snow and ice "/>' +
-      '<ColorMapEntry color="#252a34" quantity
+      '<ColorMapEntry color="#252a34" quantity="230" label=" No data"/>' +
+    '</ColorMap>' +
+  '</RasterSymbolizer>';
+Map.addLayer(LandCover.sldStyle(Classes), {}, 'Land Cover',0);
+
+// 2 
