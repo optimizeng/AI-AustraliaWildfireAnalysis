@@ -56,4 +56,6 @@ var Classes ='<RasterSymbolizer>'+
   '</RasterSymbolizer>';
 Map.addLayer(LandCover.sldStyle(Classes), {}, 'Land Cover',0);
 
-// 2 
+// 2  30mTographical data processing for land cover classification and RF modelling 
+var srtm = ee.Image('USGS/SRTMGL1_003');
+var srtm
