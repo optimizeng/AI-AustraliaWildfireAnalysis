@@ -61,4 +61,7 @@ var srtm = ee.Image('USGS/SRTMGL1_003');
 var srtm = srtm.clip(Australia)
 var elevation = srtm.select('elevation');
 var slope = ee.Terrain.slope(elevation);
-var aspect = ee.Terrain.aspec
+var aspect = ee.Terrain.aspect(elevation);
+
+var palette = ['85a392','565d47','155263','393e46','52616b','c9d6df','eeeeee']
+Map.addLayer(elevation, {min: 150, max: 900,palette: palette}, 'SRTM 30m 
