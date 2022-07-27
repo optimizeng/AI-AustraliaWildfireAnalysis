@@ -64,4 +64,7 @@ var slope = ee.Terrain.slope(elevation);
 var aspect = ee.Terrain.aspect(elevation);
 
 var palette = ['85a392','565d47','155263','393e46','52616b','c9d6df','eeeeee']
-Map.addLayer(elevation, {min: 150, max: 900,palette: palette}, 'SRTM 30m 
+Map.addLayer(elevation, {min: 150, max: 900,palette: palette}, 'SRTM 30m elevation',0);
+
+var palette = ['ececec','c1a57b','30475e','222831']
+Map.addLayer(slope, {min: 0, max: 2,palette: palette}, 'SRTM 30m slop
