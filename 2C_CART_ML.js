@@ -67,4 +67,7 @@ var palette = ['85a392','565d47','155263','393e46','52616b','c9d6df','eeeeee']
 Map.addLayer(elevation, {min: 150, max: 900,palette: palette}, 'SRTM 30m elevation',0);
 
 var palette = ['ececec','c1a57b','30475e','222831']
-Map.addLayer(slope, {min: 0, max: 2,palette: palette}, 'SRTM 30m slop
+Map.addLayer(slope, {min: 0, max: 2,palette: palette}, 'SRTM 30m slope',0);
+
+var palette = ['ffffff','ffa372','512b58','2c003e']
+Map.addLayer(aspect, {min: 0, max: 360, palette: palette
