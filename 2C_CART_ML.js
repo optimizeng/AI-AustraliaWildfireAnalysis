@@ -70,4 +70,7 @@ var palette = ['ececec','c1a57b','30475e','222831']
 Map.addLayer(slope, {min: 0, max: 2,palette: palette}, 'SRTM 30m slope',0);
 
 var palette = ['ffffff','ffa372','512b58','2c003e']
-Map.addLayer(aspect, {min: 0, max: 360, palette: palette
+Map.addLayer(aspect, {min: 0, max: 360, palette: palette}, 'SRTM 30m aspect',0);
+
+// 3 Population WorldPop Global Project Population Data 100m
+// https://developers.googl
