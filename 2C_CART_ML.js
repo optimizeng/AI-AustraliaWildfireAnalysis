@@ -73,4 +73,5 @@ var palette = ['ffffff','ffa372','512b58','2c003e']
 Map.addLayer(aspect, {min: 0, max: 360, palette: palette}, 'SRTM 30m aspect',0);
 
 // 3 Population WorldPop Global Project Population Data 100m
-// https://developers.googl
+// https://developers.google.com/earth-engine/datasets/catalog/CAS_IGSNRR_PML_V2#bands
+var dataset = ee.ImageCollection("WorldPop/GP/100m/pop").filterDate('2019
