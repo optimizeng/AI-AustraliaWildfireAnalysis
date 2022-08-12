@@ -76,4 +76,6 @@ Map.addLayer(aspect, {min: 0, max: 360, palette: palette}, 'SRTM 30m aspect',0);
 // https://developers.google.com/earth-engine/datasets/catalog/CAS_IGSNRR_PML_V2#bands
 var dataset = ee.ImageCollection("WorldPop/GP/100m/pop").filterDate('2019');
 var pop_100m = dataset.select('population');
-var populationVis = { min: 0.0, max: 0.05,palette: ['3C1642','92dce5','affc41','d4ff50', 'f
+var populationVis = { min: 0.0, max: 0.05,palette: ['3C1642','92dce5','affc41','d4ff50', 'f6f578','f6d743','f6f578']}
+var pop_100m = pop_100m.mosaic().clip(Australia) 
+Map.addLayer(pop_100m,populationVis, 'Population 1
