@@ -78,4 +78,9 @@ var dataset = ee.ImageCollection("WorldPop/GP/100m/pop").filterDate('2019');
 var pop_100m = dataset.select('population');
 var populationVis = { min: 0.0, max: 0.05,palette: ['3C1642','92dce5','affc41','d4ff50', 'f6f578','f6d743','f6f578']}
 var pop_100m = pop_100m.mosaic().clip(Australia) 
-Map.addLayer(pop_100m,populationVis, 'Population 1
+Map.addLayer(pop_100m,populationVis, 'Population 100m',0);
+
+// 4 Road
+var road_shp = ee.FeatureCollection("users/sulovaandrea/AUS_roads");
+var road_img = ee.Image().toByte().paint(road_shp, 1);
+var road_no_img = 
