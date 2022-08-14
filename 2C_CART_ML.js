@@ -83,4 +83,6 @@ Map.addLayer(pop_100m,populationVis, 'Population 100m',0);
 // 4 Road
 var road_shp = ee.FeatureCollection("users/sulovaandrea/AUS_roads");
 var road_img = ee.Image().toByte().paint(road_shp, 1);
-var road_no_img = 
+var road_no_img = road_img.unmask(0).gt(0);
+var cumulativeCost_road = ee.Image(1).cumulativeCost({source: road_no_img, maxDistance: 50000 });    
+var cumulat
