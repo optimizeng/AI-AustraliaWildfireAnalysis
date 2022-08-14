@@ -85,4 +85,6 @@ var road_shp = ee.FeatureCollection("users/sulovaandrea/AUS_roads");
 var road_img = ee.Image().toByte().paint(road_shp, 1);
 var road_no_img = road_img.unmask(0).gt(0);
 var cumulativeCost_road = ee.Image(1).cumulativeCost({source: road_no_img, maxDistance: 50000 });    
-var cumulat
+var cumulativeCost_road_clip = cumulativeCost_road.clip(Australia)    
+var palette1 = ['024249','16817a','fa744f','ffa372']
+Map.addLayer(cumulati
