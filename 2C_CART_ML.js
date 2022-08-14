@@ -87,4 +87,5 @@ var road_no_img = road_img.unmask(0).gt(0);
 var cumulativeCost_road = ee.Image(1).cumulativeCost({source: road_no_img, maxDistance: 50000 });    
 var cumulativeCost_road_clip = cumulativeCost_road.clip(Australia)    
 var palette1 = ['024249','16817a','fa744f','ffa372']
-Map.addLayer(cumulati
+Map.addLayer(cumulativeCost_road_clip, {min: 0, max: 50000, palette: palette1}, 'Roads cost 50 km', 0);
+Map.addLayer(road_img,{min: 0, max: 1, palette: '222831
