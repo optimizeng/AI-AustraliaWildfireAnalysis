@@ -91,4 +91,6 @@ Map.addLayer(cumulativeCost_road_clip, {min: 0, max: 50000, palette: palette1}, 
 Map.addLayer(road_img,{min: 0, max: 1, palette: '222831'},'Roads',0);
 
 var Cost_road_1km = ee.Image(1).cumulativeCost({source: road_no_img, maxDistance: 50000})
-    .reproject(ee.Projecti
+    .reproject(ee.Projection('EPSG:4326').atScale(500));  
+var Cost_road_1km = Cost_road_1km.unmask(1000000).clip(Australia) 
+Map.addLayer(Cost_road_1km, {min:
