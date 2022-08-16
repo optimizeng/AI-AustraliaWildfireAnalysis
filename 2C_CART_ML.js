@@ -98,4 +98,7 @@ Map.addLayer(Cost_road_1km, {min: 0, max: 50000, palette: palette1}, 'Roads Coas
 // 5 Electric Line 
 var ele_line = ee.FeatureCollection("users/sulovaandrea/Aus_Electric_Line");
 var ele_img = ee.Image().toByte().paint(ele_line, 1).clip(Australia);
-var ele_no_img = ele_img.unmask(0).
+var ele_no_img = ele_img.unmask(0).gt(0).clip(Australia);
+var palette2 = ['06623b', 'black']
+Map.addLayer(ele_img,{min: 0, max: 1, palette: palette2},'Electric Line',0);
+var Cost_ele_1km = ele_no_img.rep
