@@ -96,4 +96,6 @@ var Cost_road_1km = Cost_road_1km.unmask(1000000).clip(Australia)
 Map.addLayer(Cost_road_1km, {min: 0, max: 50000, palette: palette1}, 'Roads Coast 50km Raster', 0);    
 
 // 5 Electric Line 
-var ele_line = ee.FeatureColle
+var ele_line = ee.FeatureCollection("users/sulovaandrea/Aus_Electric_Line");
+var ele_img = ee.Image().toByte().paint(ele_line, 1).clip(Australia);
+var ele_no_img = ele_img.unmask(0).
