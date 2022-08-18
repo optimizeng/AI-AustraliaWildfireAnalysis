@@ -102,4 +102,7 @@ var ele_no_img = ele_img.unmask(0).gt(0).clip(Australia);
 var palette2 = ['06623b', 'black']
 Map.addLayer(ele_img,{min: 0, max: 1, palette: palette2},'Electric Line',0);
 var Cost_ele_1km = ele_no_img.reproject(ee.Projection('EPSG:4326').atScale(1000)).clip(Australia);
-Map.addLayer(Cost_ele_1km, {min: 0, max: 1, palette: palette2}, 'Electric Line Ra
+Map.addLayer(Cost_ele_1km, {min: 0, max: 1, palette: palette2}, 'Electric Line Raster', 0);
+    
+// 7 Human Modification - 1km
+//https://developers.google.com/earth-engine/datasets/catalog/CSP_HM_GlobalHumanModification#d
