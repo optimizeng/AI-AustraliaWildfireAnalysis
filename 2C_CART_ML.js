@@ -109,4 +109,7 @@ Map.addLayer(Cost_ele_1km, {min: 0, max: 1, palette: palette2}, 'Electric Line R
 var GHM = ee.ImageCollection("CSP/HM/GlobalHumanModification")
 var GHM_index = GHM.mean().clip(Australia)
 var palette_GHM = ['85a392','#C7B808','#4E8E07','26D5F6','DDCC09','#16089C']
-Map.addLayer(GHM_index, {min:0, max:1, palette:palette_
+Map.addLayer(GHM_index, {min:0, max:1, palette:palette_GHM}, 'Global Human Modification',0);
+
+// 8 MODIS NDVI 250m
+var dataset = ee.ImageCollection('MODIS/006/MOD13Q1').filter(e
