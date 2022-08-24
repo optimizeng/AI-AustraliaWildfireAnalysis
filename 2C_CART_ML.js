@@ -112,4 +112,6 @@ var palette_GHM = ['85a392','#C7B808','#4E8E07','26D5F6','DDCC09','#16089C']
 Map.addLayer(GHM_index, {min:0, max:1, palette:palette_GHM}, 'Global Human Modification',0);
 
 // 8 MODIS NDVI 250m
-var dataset = ee.ImageCollection('MODIS/006/MOD13Q1').filter(e
+var dataset = ee.ImageCollection('MODIS/006/MOD13Q1').filter(ee.Filter.date('2019-08-01', '2019-09-01'));
+var ndvi = dataset.select('NDVI').mean().clip(Australia);;
+var ndviVis = { min: 0.0, max: 8000.0
