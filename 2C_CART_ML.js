@@ -118,4 +118,6 @@ var ndviVis = { min: 0.0, max: 8000.0,palette: ['FFFFFF', 'CE7E45', 'DF923D', 'F
     '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01', '012E01', '011D01', '011301'],};
 Map.addLayer(ndvi, ndviVis, 'NDVI 250 MODIS',0);
 
-// 9 Soil Depth SLGA: Soil and Landscape
+// 9 Soil Depth SLGA: Soil and Landscape Grid of Australia (Soil Attributes)
+// 90m Depth of soil profile (A & B horizons)
+var dataset = ee.ImageCollec
