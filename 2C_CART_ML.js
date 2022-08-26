@@ -115,4 +115,7 @@ Map.addLayer(GHM_index, {min:0, max:1, palette:palette_GHM}, 'Global Human Modif
 var dataset = ee.ImageCollection('MODIS/006/MOD13Q1').filter(ee.Filter.date('2019-08-01', '2019-09-01'));
 var ndvi = dataset.select('NDVI').mean().clip(Australia);;
 var ndviVis = { min: 0.0, max: 8000.0,palette: ['FFFFFF', 'CE7E45', 'DF923D', 'F1B555', 'FCD163', '99B718', '74A901',
-    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '
+    '66A000', '529400', '3E8601', '207401', '056201', '004C00', '023B01', '012E01', '011D01', '011301'],};
+Map.addLayer(ndvi, ndviVis, 'NDVI 250 MODIS',0);
+
+// 9 Soil Depth SLGA: Soil and Landscape
