@@ -120,4 +120,5 @@ Map.addLayer(ndvi, ndviVis, 'NDVI 250 MODIS',0);
 
 // 9 Soil Depth SLGA: Soil and Landscape Grid of Australia (Soil Attributes)
 // 90m Depth of soil profile (A & B horizons)
-var dataset = ee.ImageCollec
+var dataset = ee.ImageCollection('CSIRO/SLGA').filter(ee.Filter.eq('attribute_code', 'DES'));
+var soilDepth = dataset.select('DES_000_200_EV').mosaic().clip(Aust
