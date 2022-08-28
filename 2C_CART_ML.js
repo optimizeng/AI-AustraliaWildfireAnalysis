@@ -123,4 +123,7 @@ Map.addLayer(ndvi, ndviVis, 'NDVI 250 MODIS',0);
 var dataset = ee.ImageCollection('CSIRO/SLGA').filter(ee.Filter.eq('attribute_code', 'DES'));
 var soilDepth = dataset.select('DES_000_200_EV').mosaic().clip(Australia);
 var soilDepthVis = {min: 0, max: 2, palette: ['252525', 'f1ab86', 'c57b57', '1E2D2F', '041F1E'],};
-Map.addLayer(soilDept
+Map.addLayer(soilDepth, soilDepthVis, 'Soil Depth',0);
+
+// 11 Climate - WIND SPEED 2.5 arc minutes more then 2km
+//https://developers.google.com/earth-engine/dat
