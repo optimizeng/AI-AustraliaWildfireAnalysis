@@ -126,4 +126,5 @@ var soilDepthVis = {min: 0, max: 2, palette: ['252525', 'f1ab86', 'c57b57', '1E2
 Map.addLayer(soilDepth, soilDepthVis, 'Soil Depth',0);
 
 // 11 Climate - WIND SPEED 2.5 arc minutes more then 2km
-//https://developers.google.com/earth-engine/dat
+//https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var vs = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(e
