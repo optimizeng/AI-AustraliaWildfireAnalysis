@@ -132,4 +132,5 @@ var vs = vs.select('vs').reduce(ee.Reducer.mean()).clip(Australia);
 var vsVis = { min:100,max: 400,palette: ['F7F3F0','DFDFDF','496A81','1E96FC','00171F'],};
 Map.addLayer(vs, vsVis, 'Wind-speed at 10m Scale 0,01',0);
 
-// 12 Maxim
+// 12 Maximum temperature  2.5 arc minutes more then 2km
+//https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPS
