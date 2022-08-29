@@ -129,4 +129,7 @@ Map.addLayer(soilDepth, soilDepthVis, 'Soil Depth',0);
 //https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
 var vs = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
 var vs = vs.select('vs').reduce(ee.Reducer.mean()).clip(Australia);
-var vsVis = {
+var vsVis = { min:100,max: 400,palette: ['F7F3F0','DFDFDF','496A81','1E96FC','00171F'],};
+Map.addLayer(vs, vsVis, 'Wind-speed at 10m Scale 0,01',0);
+
+// 12 Maxim
