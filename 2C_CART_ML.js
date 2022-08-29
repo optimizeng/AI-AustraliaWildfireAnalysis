@@ -127,4 +127,6 @@ Map.addLayer(soilDepth, soilDepthVis, 'Soil Depth',0);
 
 // 11 Climate - WIND SPEED 2.5 arc minutes more then 2km
 //https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
-var vs = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(e
+var vs = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var vs = vs.select('vs').reduce(ee.Reducer.mean()).clip(Australia);
+var vsVis = {
