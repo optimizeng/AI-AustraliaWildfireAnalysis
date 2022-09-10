@@ -134,4 +134,6 @@ Map.addLayer(vs, vsVis, 'Wind-speed at 10m Scale 0,01',0);
 
 // 12 Maximum temperature  2.5 arc minutes more then 2km
 //https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
-var temp_max = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31')
+var temp_max = ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var temp_max = temp_max.select('tmmx').reduce(ee.Reducer.mean()).clip(Australia);
+var vsVis = { min: 200,max: 400,palette: ['F9EBE0','F5E663','
