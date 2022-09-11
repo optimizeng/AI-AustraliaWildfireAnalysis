@@ -139,4 +139,5 @@ var temp_max = temp_max.select('tmmx').reduce(ee.Reducer.mean()).clip(Australia)
 var vsVis = { min: 200,max: 400,palette: ['F9EBE0','F5E663','E3B505','F18805','EA2B1F','550527'],};
 Map.addLayer(temp_max, vsVis, 'Maximum temperature  Scale 0,1',0);
 
-// 13 Palmer Dro
+// 13 Palmer Drought Severity Index https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var Drought_Palmer= ee.Image
