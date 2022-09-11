@@ -140,4 +140,5 @@ var vsVis = { min: 200,max: 400,palette: ['F9EBE0','F5E663','E3B505','F18805','E
 Map.addLayer(temp_max, vsVis, 'Maximum temperature  Scale 0,1',0);
 
 // 13 Palmer Drought Severity Index https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
-var Drought_Palmer= ee.Image
+var Drought_Palmer= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2018-08-31', '2019-08-31'));
+var Drought_Palmer = Drought_Palmer.se
