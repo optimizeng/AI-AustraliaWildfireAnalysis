@@ -146,4 +146,5 @@ var DroughVis = { min:-300,max: 100,palette: ['40C778','6D855D','C0BEA0','CD947B
 Map.addLayer(Drought_Palmer, DroughVis, 'Palmer Drought Severity Index', 0);
 
 // 14 Precipitation accumulation https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
-var Precipitation= ee.ImageCollecti
+var Precipitation= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2019-08-01', '2020-02-15'));
+var Precipitation = Precipitation.select('pr').r
