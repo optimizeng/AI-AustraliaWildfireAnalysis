@@ -148,4 +148,7 @@ Map.addLayer(Drought_Palmer, DroughVis, 'Palmer Drought Severity Index', 0);
 // 14 Precipitation accumulation https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
 var Precipitation= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2019-08-01', '2020-02-15'));
 var Precipitation = Precipitation.select('pr').reduce(ee.Reducer.mean()).clip(Australia);
-var PrecipVIS = { min:0 ,max: 70, palette: ['EEF4ED','8DA9C4','00A8E
+var PrecipVIS = { min:0 ,max: 70, palette: ['EEF4ED','8DA9C4','00A8E8','007EA7','003459','00171F'],};
+Map.addLayer(Precipitation, PrecipVIS, 'Precipitation accumulation mm',0);
+
+// 15 Soil Moi
