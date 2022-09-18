@@ -151,4 +151,5 @@ var Precipitation = Precipitation.select('pr').reduce(ee.Reducer.mean()).clip(Au
 var PrecipVIS = { min:0 ,max: 70, palette: ['EEF4ED','8DA9C4','00A8E8','007EA7','003459','00171F'],};
 Map.addLayer(Precipitation, PrecipVIS, 'Precipitation accumulation mm',0);
 
-// 15 Soil Moi
+// 15 Soil Moisture https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
+var Soil_Moisture= ee
