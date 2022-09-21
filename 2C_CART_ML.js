@@ -153,4 +153,5 @@ Map.addLayer(Precipitation, PrecipVIS, 'Precipitation accumulation mm',0);
 
 // 15 Soil Moisture https://developers.google.com/earth-engine/datasets/catalog/IDAHO_EPSCOR_TERRACLIMATE#description
 var Soil_Moisture= ee.ImageCollection('IDAHO_EPSCOR/TERRACLIMATE').filter(ee.Filter.date('2019-01-01', '2019-08-31'));
-var Soil_Moistur
+var Soil_Moisture = Soil_Moisture.select('soil').reduce(ee.Reducer.mean()).clip(Australia);
+var PrecipVIS = { min:0 ,max:600, palette: ['EEF4ED','8DA9C4','00A8E8',
