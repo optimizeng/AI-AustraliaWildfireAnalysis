@@ -157,4 +157,6 @@ var Soil_Moisture = Soil_Moisture.select('soil').reduce(ee.Reducer.mean()).clip(
 var PrecipVIS = { min:0 ,max:600, palette: ['EEF4ED','8DA9C4','00A8E8','007EA7','003459','00171F'],};
 Map.addLayer(Soil_Moisture, PrecipVIS, 'Soil moisture Scale 0.1',0);
 
-//______M E R G E ____ A L L___ V A R I A B L E
+//______M E R G E ____ A L L___ V A R I A B L E S __________________________________________________    
+
+var merge = LandCover.addBands(elevation).addBands(slope).addBa
