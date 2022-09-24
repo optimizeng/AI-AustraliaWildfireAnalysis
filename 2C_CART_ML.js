@@ -161,4 +161,7 @@ Map.addLayer(Soil_Moisture, PrecipVIS, 'Soil moisture Scale 0.1',0);
 
 var merge = LandCover.addBands(elevation).addBands(slope).addBands(aspect).addBands(GHM_index)
       .addBands(pop_100m).addBands(Soil_Moisture).addBands(Cost_road_1km).addBands(Cost_ele_1km)
-      .addBands(ndvi).addBands(soilD
+      .addBands(ndvi).addBands(soilDepth).addBands(vs).addBands(temp_max).addBands(Drought_Palmer).addBands(Precipitation)
+                
+var merge = merge.select(
+['d
