@@ -164,4 +164,5 @@ var merge = LandCover.addBands(elevation).addBands(slope).addBands(aspect).addBa
       .addBands(ndvi).addBands(soilDepth).addBands(vs).addBands(temp_max).addBands(Drought_Palmer).addBands(Precipitation)
                 
 var merge = merge.select(
-['discrete_classification', 'elevation', 'slope', 'aspect', 'gHM', 'population', 'soil_mean', 'cumulative_cost','constant','NDVI', 'DES_000_200_EV'
+['discrete_classification', 'elevation', 'slope', 'aspect', 'gHM', 'population', 'soil_mean', 'cumulative_cost','constant','NDVI', 'DES_000_200_EV', 'vs_mean', 'tmmx_mean', 'pdsi_mean', 'pr_mean'],
+['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modification', 'Popul
