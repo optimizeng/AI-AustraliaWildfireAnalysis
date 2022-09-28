@@ -168,3 +168,7 @@ var merge = merge.select(
 ['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modification', 'Population', 'Soil Moisture', 'Distance From Road', 'Electric Network', 'NDVI', 'Soil Depth', 'Wind Speed', 'Temperature', 'Drought','Precipitation'])
 
 var bands= ['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modification', 'Population', 'Soil Moisture', 'Distance From Road', 'Electric Network', 'NDVI', 'Soil Depth', 'Wind Speed', 'Temperature', 'Drought','Precipitation']
+
+//____R A N D O M __F O R E S T__C L A S S I F I C A T I O N ____________________________________________________      
+
+var point = ee.FeatureC
