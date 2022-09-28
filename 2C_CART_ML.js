@@ -174,4 +174,6 @@ var bands= ['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modifica
 var point = ee.FeatureCollection("users/sulovaandrea/TrainingDataset")
 
 var active_fire_point = point.filterMetadata("fire","equals",1)
-Map.addLayer(active_fi
+Map.addLayer(active_fire_point, {color:'orange',size:0.1}, 'Active Fire Points',0);
+var No_fire_point = point.filterMetadata("fire","equals",0)
+Map.addLayer(
