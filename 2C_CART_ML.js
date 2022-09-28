@@ -171,4 +171,7 @@ var bands= ['Land Cover', 'Elevation', 'Slope', 'Aspect', 'Global Human Modifica
 
 //____R A N D O M __F O R E S T__C L A S S I F I C A T I O N ____________________________________________________      
 
-var point = ee.FeatureC
+var point = ee.FeatureCollection("users/sulovaandrea/TrainingDataset")
+
+var active_fire_point = point.filterMetadata("fire","equals",1)
+Map.addLayer(active_fi
