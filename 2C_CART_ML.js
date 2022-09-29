@@ -176,4 +176,7 @@ var point = ee.FeatureCollection("users/sulovaandrea/TrainingDataset")
 var active_fire_point = point.filterMetadata("fire","equals",1)
 Map.addLayer(active_fire_point, {color:'orange',size:0.1}, 'Active Fire Points',0);
 var No_fire_point = point.filterMetadata("fire","equals",0)
-Map.addLayer(
+Map.addLayer(No_fire_point, {color:'black',size:0.1}, 'No-Fire Points',0);
+
+var classifierTraining = merge.sampleRegions(
+            {collection
