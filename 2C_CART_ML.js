@@ -187,4 +187,7 @@ var classifierTraining = merge.sampleRegions(
 
 // Make a Random Forest classifier and train it.
 var RF_classifier = ee.Classifier.smileCart(200).train(
-                 
+                    {features:classifierTraining,
+                    classProperty:'fire',inputProperties: bands});
+  
+var classification = merge.classify(RF
