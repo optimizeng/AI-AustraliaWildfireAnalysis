@@ -183,4 +183,8 @@ var classifierTraining = merge.sampleRegions(
             properties: ['fire'],
             scale: 100});
                   
-//print('Number of trained samples: ', classifierTraining.size
+//print('Number of trained samples: ', classifierTraining.size())
+
+// Make a Random Forest classifier and train it.
+var RF_classifier = ee.Classifier.smileCart(200).train(
+                 
