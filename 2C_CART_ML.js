@@ -190,4 +190,7 @@ var RF_classifier = ee.Classifier.smileCart(200).train(
                     {features:classifierTraining,
                     classProperty:'fire',inputProperties: bands});
   
-var classification = merge.classify(RF
+var classification = merge.classify(RF_classifier);
+Map.addLayer(classification, {min: 0, max: 1, palette: ['green', 'red']},'classification', 0);    
+ 
+var classifier_Pro
