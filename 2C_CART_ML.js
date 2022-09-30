@@ -179,4 +179,8 @@ var No_fire_point = point.filterMetadata("fire","equals",0)
 Map.addLayer(No_fire_point, {color:'black',size:0.1}, 'No-Fire Points',0);
 
 var classifierTraining = merge.sampleRegions(
-            {collection
+            {collection: point,
+            properties: ['fire'],
+            scale: 100});
+                  
+//print('Number of trained samples: ', classifierTraining.size
