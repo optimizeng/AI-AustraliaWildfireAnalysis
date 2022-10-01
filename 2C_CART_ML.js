@@ -199,4 +199,6 @@ Map.addLayer(classification_Pro, {min: 0, max: 1, palette: ['green', 'red']},'cl
                                   
 //_____ A C C U R A C Y___ A S S E S S M E N T_________________________________________________  
 
-var split = 0.7;  // Roughly 70% training, 30% te
+var split = 0.7;  // Roughly 70% training, 30% testing.
+var classifierTraining= classifierTraining.randomColumn();
+var trained = classifierTraining.filter(ee.Filter.lt('random',
