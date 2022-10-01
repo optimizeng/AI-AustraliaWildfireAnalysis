@@ -193,4 +193,5 @@ var RF_classifier = ee.Classifier.smileCart(200).train(
 var classification = merge.classify(RF_classifier);
 Map.addLayer(classification, {min: 0, max: 1, palette: ['green', 'red']},'classification', 0);    
  
-var classifier_Pro
+var classifier_Pro = ee.Classifier.smileCart(200).setOutputMode('PROBABILITY').train(classifierTraining,"fire"); 
+var classification_Pro = merge.classify
