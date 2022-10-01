@@ -196,4 +196,7 @@ Map.addLayer(classification, {min: 0, max: 1, palette: ['green', 'red']},'classi
 var classifier_Pro = ee.Classifier.smileCart(200).setOutputMode('PROBABILITY').train(classifierTraining,"fire"); 
 var classification_Pro = merge.classify(classifier_Pro);
 Map.addLayer(classification_Pro, {min: 0, max: 1, palette: ['green', 'red']},'classification_Pro', 0);    
-                           
+                                  
+//_____ A C C U R A C Y___ A S S E S S M E N T_________________________________________________  
+
+var split = 0.7;  // Roughly 70% training, 30% te
