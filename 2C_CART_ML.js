@@ -207,4 +207,7 @@ var test = classifierTraining.filter(ee.Filter.gte('random', split));
 //print('Number of test dataset: ', test.size())
 
 var classifier_trained = ee.Classifier.smileCart(200).train
-         
+                          ({features:trained,
+                          classProperty:'fire',
+                          inputProperties: bands});
+                   
