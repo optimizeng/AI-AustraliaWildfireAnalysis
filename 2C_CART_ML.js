@@ -204,3 +204,7 @@ var classifierTraining= classifierTraining.randomColumn();
 var trained = classifierTraining.filter(ee.Filter.lt('random', split));
 var test = classifierTraining.filter(ee.Filter.gte('random', split));
 //print('Number of training dataset: ', trained.size())
+//print('Number of test dataset: ', test.size())
+
+var classifier_trained = ee.Classifier.smileCart(200).train
+         
