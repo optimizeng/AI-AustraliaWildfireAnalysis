@@ -201,4 +201,6 @@ Map.addLayer(classification_Pro, {min: 0, max: 1, palette: ['green', 'red']},'cl
 
 var split = 0.7;  // Roughly 70% training, 30% testing.
 var classifierTraining= classifierTraining.randomColumn();
-var trained = classifierTraining.filter(ee.Filter.lt('random',
+var trained = classifierTraining.filter(ee.Filter.lt('random', split));
+var test = classifierTraining.filter(ee.Filter.gte('random', split));
+//print('Number of training dataset: ', trained.size())
