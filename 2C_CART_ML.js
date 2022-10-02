@@ -210,4 +210,6 @@ var classifier_trained = ee.Classifier.smileCart(200).train
                           ({features:trained,
                           classProperty:'fire',
                           inputProperties: bands});
-                   
+                          
+var test_classification = test.classify(classifier_trained)
+var confusionMatrix =test_classification.errorMat
