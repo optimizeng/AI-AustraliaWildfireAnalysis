@@ -212,4 +212,6 @@ var classifier_trained = ee.Classifier.smileCart(200).train
                           inputProperties: bands});
                           
 var test_classification = test.classify(classifier_trained)
-var confusionMatrix =test_classification.errorMat
+var confusionMatrix =test_classification.errorMatrix('fire','classification');    
+var confusionMatrixArray = ee.Feature(null, {matrix: confusionMatrix.array()});
+print('Confu
