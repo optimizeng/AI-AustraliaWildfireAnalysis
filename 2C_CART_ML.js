@@ -218,4 +218,6 @@ print('Confusion Matrix:', confusionMatrixArray);
 var overAccuracy = ee.Feature(null, {matrix: confusionMatrix.accuracy()});
 print('Overal Accuracy:', overAccuracy)
 //var prodAccuracy = ee.Feature(null,{matrix:confusionMatrix.producersAccuracy()})
-//print('Producers Accuracy:', prod
+//print('Producers Accuracy:', prodAccuracy)
+//var consAccuracy = ee.Feature(null,{matrix:confusionMatrix.consumersAccuracy()});
+//print('Consumers Accuracy:', cons
