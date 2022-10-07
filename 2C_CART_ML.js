@@ -216,4 +216,6 @@ var confusionMatrix =test_classification.errorMatrix('fire','classification');
 var confusionMatrixArray = ee.Feature(null, {matrix: confusionMatrix.array()});
 print('Confusion Matrix:', confusionMatrixArray);
 var overAccuracy = ee.Feature(null, {matrix: confusionMatrix.accuracy()});
-print('Overal Accuracy:', ove
+print('Overal Accuracy:', overAccuracy)
+//var prodAccuracy = ee.Feature(null,{matrix:confusionMatrix.producersAccuracy()})
+//print('Producers Accuracy:', prod
