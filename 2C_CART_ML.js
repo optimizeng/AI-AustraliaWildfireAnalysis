@@ -220,4 +220,8 @@ print('Overal Accuracy:', overAccuracy)
 //var prodAccuracy = ee.Feature(null,{matrix:confusionMatrix.producersAccuracy()})
 //print('Producers Accuracy:', prodAccuracy)
 //var consAccuracy = ee.Feature(null,{matrix:confusionMatrix.consumersAccuracy()});
-//print('Consumers Accuracy:', cons
+//print('Consumers Accuracy:', consAccuracy)
+var kappa = ee.Feature(null, {matrix: confusionMatrix.kappa()});
+print(' kappa:', kappa)
+
+//____V A R I A B
