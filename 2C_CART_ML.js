@@ -228,4 +228,6 @@ print(' kappa:', kappa)
 var dict = RF_classifier.explain();
 print('Explain:',dict);
 
-var varia
+var variable_importance = ee.Feature(null, ee.Dictionary(dict).get('importance'));
+ 
+var chart = ui.Chart.feature.byProperty(variabl
