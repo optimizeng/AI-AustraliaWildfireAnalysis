@@ -224,4 +224,8 @@ print('Overal Accuracy:', overAccuracy)
 var kappa = ee.Feature(null, {matrix: confusionMatrix.kappa()});
 print(' kappa:', kappa)
 
-//____V A R I A B
+//____V A R I A B L E______ I M P O R T A N C E_____________________________________    
+var dict = RF_classifier.explain();
+print('Explain:',dict);
+
+var varia
