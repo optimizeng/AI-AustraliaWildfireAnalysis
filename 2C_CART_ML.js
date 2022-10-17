@@ -233,4 +233,5 @@ var variable_importance = ee.Feature(null, ee.Dictionary(dict).get('importance')
 var chart = ui.Chart.feature.byProperty(variable_importance).setChartType('ColumnChart')
           .setOptions({title: 'Random Forest Variable Importance',
           legend: {position: 'none'},
- 
+          hAxis: {title: 'Bands'},vAxis: {title: 'Importance'}});
+print(chart);
