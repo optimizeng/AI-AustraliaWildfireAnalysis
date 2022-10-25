@@ -11,4 +11,6 @@ var AUS = /* color: #0000ff */ee.Geometry.Polygon(
 Map.addLayer(AUS)
 Map.centerObject(AUS)
 
-//var countries = ee.FeatureCo
+//var countries = ee.FeatureCollection("USDOS/LSIB_SIMPLE/2017");
+//var Australia = countries.filter(ee.Filter.eq("country_na","Australia"));
+var dataset = ee.ImageCollection('FIRMS').
