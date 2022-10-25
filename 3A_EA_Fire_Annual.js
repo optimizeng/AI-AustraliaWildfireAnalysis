@@ -13,4 +13,9 @@ Map.centerObject(AUS)
 
 //var countries = ee.FeatureCollection("USDOS/LSIB_SIMPLE/2017");
 //var Australia = countries.filter(ee.Filter.eq("country_na","Australia"));
-var dataset = ee.ImageCollection('FIRMS').
+var dataset = ee.ImageCollection('FIRMS').select('T21').filterBounds(AUS)
+
+var years = ee.List.sequence(2000,2020)
+
+var maps = ee.ImageCollection(years.map(function(year){
+  var startDate = 
