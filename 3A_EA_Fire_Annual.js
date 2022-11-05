@@ -18,4 +18,6 @@ var dataset = ee.ImageCollection('FIRMS').select('T21').filterBounds(AUS)
 var years = ee.List.sequence(2000,2020)
 
 var maps = ee.ImageCollection(years.map(function(year){
-  var startDate = 
+  var startDate = ee.Date.fromYMD(year,1,1)
+  var endDate = ee.Date.fromYMD(year,12,31)
+  var myImg = dataset.filter(ee.Filter.date(startDate,endDate)).max()
