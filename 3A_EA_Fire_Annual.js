@@ -20,4 +20,8 @@ var years = ee.List.sequence(2000,2020)
 var maps = ee.ImageCollection(years.map(function(year){
   var startDate = ee.Date.fromYMD(year,1,1)
   var endDate = ee.Date.fromYMD(year,12,31)
-  var myImg = dataset.filter(ee.Filter.date(startDate,endDate)).max()
+  var myImg = dataset.filter(ee.Filter.date(startDate,endDate)).max().gt(100).set("system:time_start",startDate)
+  return myImg
+}))
+
+var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps,
