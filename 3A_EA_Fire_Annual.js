@@ -28,4 +28,6 @@ var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps,
                               regions:AUS, 
                               reducer:ee.Reducer.count(),
                               scale:1000}).setOptions({title: 'Annual number of fires in Australia',
-                                                       vAxis: {titl
+                                                       vAxis: {title: 'Number of Fires'},
+                                                       hAxis: {title: 'Years'},
+                                         
