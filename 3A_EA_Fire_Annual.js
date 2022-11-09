@@ -27,4 +27,5 @@ var maps = ee.ImageCollection(years.map(function(year){
 var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps, 
                               regions:AUS, 
                               reducer:ee.Reducer.count(),
-                              scale
+                              scale:1000}).setOptions({title: 'Annual number of fires in Australia',
+                                                       vAxis: {titl
