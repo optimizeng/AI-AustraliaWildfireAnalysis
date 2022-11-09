@@ -24,4 +24,7 @@ var maps = ee.ImageCollection(years.map(function(year){
   return myImg
 }))
 
-var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps,
+var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps, 
+                              regions:AUS, 
+                              reducer:ee.Reducer.count(),
+                              scale
