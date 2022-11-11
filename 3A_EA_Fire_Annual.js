@@ -32,4 +32,6 @@ var chart_year= ui.Chart.image.seriesByRegion({imageCollection:maps,
                                                        hAxis: {title: 'Years'},
                                                        lineWidth: 1,
                                                        pointSize: 3,
-                                        
+                                                       series: {0: {color: 'FF0000'}}});
+                                                       
+           
