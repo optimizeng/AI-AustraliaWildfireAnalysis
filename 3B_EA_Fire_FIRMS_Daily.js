@@ -9,4 +9,7 @@ var AUS = ee.Geometry.Polygon(
           [132.2908212855952, -11.259168237228634],[129.2146494105952, -14.088573349609213]]]);
 var AUS_comp = ee.FeatureCollection("USDOS/LSIB/2013").filterMetadata("cc","equals","AS")
 Map.addLayer(AUS_comp)
-Map.centerObject(AUS_
+Map.centerObject(AUS_comp,5);
+
+var dataset = ee.ImageCollection('FIRMS').select('T21').filterDate('2010-01-01', '2020-03-01');
+var series = ui.C
