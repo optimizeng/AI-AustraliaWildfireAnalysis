@@ -17,4 +17,8 @@ print(series);
 
 //________FIRMS______________________
 var FIRMS_AUS = dataset.map(function(firms) { return firms.clip(AUS); });
-var FIRMS_AUS_Total = FIRMS_AUS.filter(ee.Filter.date('2019-06-01','2020-02-29'))
+var FIRMS_AUS_Total = FIRMS_AUS.filter(ee.Filter.date('2019-06-01','2020-02-29')).sum();
+var visTp = {min: 0, max:1000, palette: ['FF0000']};
+Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan-Feb');
+
+//________LEGEND_____
