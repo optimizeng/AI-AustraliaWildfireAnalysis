@@ -23,4 +23,6 @@ Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan-Feb');
 
 //________LEGEND_____________________
 var legend = ui.Panel({style: { position: 'middle-right',padding: '8px 15px'}});
-var legendTitle = ui.Label({value: '', style: {fontW
+var legendTitle = ui.Label({value: '', style: {fontWeight: 'bold',fontSize: '18px',margin: '0 0 4px 0',padding: '0'}});
+legend.add(legendTitle);
+var makeRow = function(color, name) {var color
