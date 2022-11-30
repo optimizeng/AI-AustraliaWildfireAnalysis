@@ -21,4 +21,6 @@ var FIRMS_AUS_Total = FIRMS_AUS.filter(ee.Filter.date('2019-06-01','2020-02-29')
 var visTp = {min: 0, max:1000, palette: ['FF0000']};
 Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan-Feb');
 
-//________LEGEND_____
+//________LEGEND_____________________
+var legend = ui.Panel({style: { position: 'middle-right',padding: '8px 15px'}});
+var legendTitle = ui.Label({value: '', style: {fontW
