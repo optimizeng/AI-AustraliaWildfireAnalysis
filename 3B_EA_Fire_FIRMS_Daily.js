@@ -28,4 +28,9 @@ legend.add(legendTitle);
 var makeRow = function(color, name) {var colorBox = ui.Label({style: {backgroundColor: '#' + color, padding: '8px',margin: '0 0 4px 0'}});
      var description = ui.Label({value:name,style: {margin: '0 0 4px 6px'}});
      return ui.Panel({widgets: [colorBox, description],layout: ui.Panel.Layout.Flow('horizontal')});};
-v
+var palette =['FF0000'];
+var names = ['Fire'];
+for (var i = 0; i < 1; i++) {legend.add(makeRow(palette[i], names[i]));}  
+Map.add(legend);
+
+//________BAS
