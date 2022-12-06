@@ -34,4 +34,6 @@ for (var i = 0; i < 1; i++) {legend.add(makeRow(palette[i], names[i]));}
 Map.add(legend);
 
 //________BASEMAP_____________________
-var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elementType: 'labels.text.fill', stylers: [{colo
+var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+  {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+  {featureType: 'administrative',elementType: 'geome
