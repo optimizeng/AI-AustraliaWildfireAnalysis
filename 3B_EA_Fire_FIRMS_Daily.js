@@ -39,4 +39,5 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'administrative',elementType: 'geometry.stroke', stylers: [{color: '#c9b2a6'}]},
   {featureType: 'administrative.land_parcel',elementType: 'geometry.stroke',stylers: [{color: '#dcd2be'}]},
   {featureType: 'administrative.land_parcel',elementType: 'labels.text.fill',stylers: [{color: '#ae9e90'}] },
-  {feat
+  {featureType: 'administrative.land_parcel',elementType: 'labels.text.stroke',stylers: [{color: '#000040'}, {visibility: 'simplified'}]  },
+  {feature
