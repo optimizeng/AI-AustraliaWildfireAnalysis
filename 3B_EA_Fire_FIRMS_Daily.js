@@ -41,4 +41,5 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'administrative.land_parcel',elementType: 'labels.text.fill',stylers: [{color: '#ae9e90'}] },
   {featureType: 'administrative.land_parcel',elementType: 'labels.text.stroke',stylers: [{color: '#000040'}, {visibility: 'simplified'}]  },
   {featureType: 'administrative.neighborhood', elementType: 'labels.text.fill',stylers: [{color: '#408080'}]},
-  {featureType: 'landscape.man_made',elemen
+  {featureType: 'landscape.man_made',elementType: 'geometry.fill',stylers: [{color: '#800040'}]},
+  {featureType: 'landscape.natural',elementType: 'geometry', stylers: [{color: 'blue
