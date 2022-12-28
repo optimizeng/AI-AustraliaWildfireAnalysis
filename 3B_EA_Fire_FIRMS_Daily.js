@@ -66,4 +66,7 @@ var mapStyle = [{elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},{elemen
   {featureType: 'transit.station',elementType: 'geometry',stylers: [{color: '#dfd2ae'}]},
   {featureType: 'water',elementType: 'geometry.fill',stylers: [{color: '#b9d3c2'}]},
   {featureType: 'water',elementType: 'labels.text.fill',stylers: [{color: 'blue'}]}];
-Map.setOpt
+Map.setOptions('mapStyle', {mapStyle: mapStyle});
+    
+
+
