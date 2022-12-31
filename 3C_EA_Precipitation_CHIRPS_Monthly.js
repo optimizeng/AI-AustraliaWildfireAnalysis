@@ -4,4 +4,5 @@ Map.centerObject(Australia, 4);
 
 // Daily total precipitation sums
 var CHIRPS = ee.ImageCollection('UCSB-CHG/CHIRPS/DAILY')
-    .f
+    .filter(ee.Filter.date('2019-09-01','2020-02-29'));
+var CHIRPS_AUS = CHIRPS.map(function(Landsat) { return Landsat.clip
