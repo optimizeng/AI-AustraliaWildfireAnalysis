@@ -9,4 +9,8 @@ var CHIRPS_AUS = CHIRPS.map(function(Landsat) { return Landsat.clip(Australia); 
 
 var monchart=ui.Chart.image.series(CHIRPS_AUS, Australia, ee.Reducer.mean())
   .setOptions({
-    title: "Daily Pe
+    title: "Daily Percipitation for Australia",
+    hAxis: {title: 'Date'},
+    vAxis: {title: 'Mean Precipitation  (mm/day)'},
+    pointSize: 3});
+//print(monchar
