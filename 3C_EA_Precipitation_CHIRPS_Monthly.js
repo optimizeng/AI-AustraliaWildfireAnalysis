@@ -13,4 +13,7 @@ var monchart=ui.Chart.image.series(CHIRPS_AUS, Australia, ee.Reducer.mean())
     hAxis: {title: 'Date'},
     vAxis: {title: 'Mean Precipitation  (mm/day)'},
     pointSize: 3});
-//print(monchar
+//print(monchart);
+
+var visPer = {min: 0, max:30, palette: ['f4f4f4', '6983aa','00bcd4','0000FF']};
+var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Fi
