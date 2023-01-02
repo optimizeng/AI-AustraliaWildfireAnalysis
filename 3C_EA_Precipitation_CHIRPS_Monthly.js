@@ -16,4 +16,7 @@ var monchart=ui.Chart.image.series(CHIRPS_AUS, Australia, ee.Reducer.mean())
 //print(monchart);
 
 var visPer = {min: 0, max:30, palette: ['f4f4f4', '6983aa','00bcd4','0000FF']};
-var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Fi
+var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2020-01-01','2020-02-29')).sum();
+Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Jan-Feb');
+
+var CHIRPS_A
