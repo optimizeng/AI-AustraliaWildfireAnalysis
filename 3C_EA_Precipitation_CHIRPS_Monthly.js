@@ -26,4 +26,8 @@ var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2020-01-01','2020-01-31'
 Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Jan');
 
 var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2020-02-01','2020-02-29')).sum();
-Map.addLayer(C
+Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Feb');
+
+//____________FIRMS_______________________________________
+
+var dataset_2 = ee.ImageColle
