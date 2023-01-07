@@ -30,4 +30,5 @@ Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Feb');
 
 //____________FIRMS_______________________________________
 
-var dataset_2 = ee.ImageColle
+var dataset_2 = ee.ImageCollection('FIRMS').select('T21').filterDate('2020-02-01','2020-02-29');
+var FIRMS_AUS = dataset_2.map(function(firms) { retur
