@@ -23,4 +23,7 @@ var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2019-09-01','2019-12-31'
 Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Sep-Dec');
 
 var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2020-01-01','2020-01-31')).sum();
-Map.addLayer(CHIRPS_AUS_date, visPer
+Map.addLayer(CHIRPS_AUS_date, visPer,'Precipitation Jan');
+
+var CHIRPS_AUS_date = CHIRPS_AUS.filter(ee.Filter.date('2020-02-01','2020-02-29')).sum();
+Map.addLayer(C
