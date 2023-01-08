@@ -38,4 +38,5 @@ Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan-Feb',0);
 
 
 //_________________LEGEND_____________________________________________
-var legend = ui.Panel({style: {position: 
+var legend = ui.Panel({style: {position: 'middle-right',padding: '8px 10px'}});
+var legendTitle = ui.Label({value: 'Precipitation (mm/day)',style: {fontWeight: 'bold',fontSize: '15px',margin
