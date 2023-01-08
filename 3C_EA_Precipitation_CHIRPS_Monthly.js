@@ -39,4 +39,7 @@ Map.addLayer(FIRMS_AUS_Total, visTp,'Total fire Jan-Feb',0);
 
 //_________________LEGEND_____________________________________________
 var legend = ui.Panel({style: {position: 'middle-right',padding: '8px 10px'}});
-var legendTitle = ui.Label({value: 'Precipitation (mm/day)',style: {fontWeight: 'bold',fontSize: '15px',margin
+var legendTitle = ui.Label({value: 'Precipitation (mm/day)',style: {fontWeight: 'bold',fontSize: '15px',margin: '5 0 9px 0',padding: '10'}});
+legend.add(legendTitle);
+var lon = ee.Image.pixelLonLat().select('latitude');
+var gradient = lon.multiply((visPer.max-v
