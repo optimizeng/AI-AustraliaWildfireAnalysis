@@ -42,4 +42,7 @@ var legend = ui.Panel({style: {position: 'middle-right',padding: '8px 10px'}});
 var legendTitle = ui.Label({value: 'Precipitation (mm/day)',style: {fontWeight: 'bold',fontSize: '15px',margin: '5 0 9px 0',padding: '10'}});
 legend.add(legendTitle);
 var lon = ee.Image.pixelLonLat().select('latitude');
-var gradient = lon.multiply((visPer.max-v
+var gradient = lon.multiply((visPer.max-visPer.min)/100.0).add(visPer.min);
+var legendImage = gradient.visualize(visPer);
+var panel = ui.Panel({widgets: [ui.Label(visPer['max'])],});
+legen
