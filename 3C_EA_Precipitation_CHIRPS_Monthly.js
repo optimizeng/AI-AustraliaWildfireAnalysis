@@ -45,4 +45,5 @@ var lon = ee.Image.pixelLonLat().select('latitude');
 var gradient = lon.multiply((visPer.max-visPer.min)/100.0).add(visPer.min);
 var legendImage = gradient.visualize(visPer);
 var panel = ui.Panel({widgets: [ui.Label(visPer['max'])],});
-legen
+legend.add(panel);
+var thumbnail = ui.Thumbnail({image: legendImage,params: {bbox:'0,0,10,90', dimensions:'20x70'},style: {padding: '1px', po
