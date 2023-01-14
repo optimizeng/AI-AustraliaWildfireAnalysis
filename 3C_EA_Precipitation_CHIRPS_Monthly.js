@@ -49,3 +49,8 @@ legend.add(panel);
 var thumbnail = ui.Thumbnail({image: legendImage,params: {bbox:'0,0,10,90', dimensions:'20x70'},style: {padding: '1px', position: 'bottom-right'}});
 legend.add(thumbnail);
 var panel = ui.Panel({widgets: [ui.Label(visPer['min'])],});legend.add(panel);Map.add(legend);
+
+//_________Basemap
+var mapStyle = [
+  {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
+  {elementType: 'labels.text.fill',
