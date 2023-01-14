@@ -53,4 +53,6 @@ var panel = ui.Panel({widgets: [ui.Label(visPer['min'])],});legend.add(panel);Ma
 //_________Basemap
 var mapStyle = [
   {elementType: 'geometry', stylers: [{color: '#ebe3cd'}]},
-  {elementType: 'labels.text.fill',
+  {elementType: 'labels.text.fill', stylers: [{color: '#523735'}]},
+  {elementType: 'labels.text.stroke', stylers: [{color: '#f5f1e6'}]},
+  {featureTy
