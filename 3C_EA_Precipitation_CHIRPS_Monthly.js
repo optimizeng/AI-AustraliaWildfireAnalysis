@@ -63,4 +63,6 @@ var mapStyle = [
   {featureType: 'landscape.man_made',elementType: 'geometry.fill',stylers: [{color: '#800040'}]}, 
   {featureType: 'landscape.natural',  elementType: 'geometry',stylers: [{color: 'blue'}]},
   {featureType: 'landscape.natural',elementType: 'geometry.fill',stylers: [{color: 'blue'}]},
-  {featureType: 'landscape.natural.terrain',elementTy
+  {featureType: 'landscape.natural.terrain',elementType: 'geometry.fill', stylers: [{color: 'blue'}]},
+  {featureType: 'road',elementType: 'geometry',stylers: [{color: '#f5f1e6'}]},
+  {featureType: 'r
