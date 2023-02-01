@@ -65,4 +65,5 @@ var mapStyle = [
   {featureType: 'landscape.natural',elementType: 'geometry.fill',stylers: [{color: 'blue'}]},
   {featureType: 'landscape.natural.terrain',elementType: 'geometry.fill', stylers: [{color: 'blue'}]},
   {featureType: 'road',elementType: 'geometry',stylers: [{color: '#f5f1e6'}]},
-  {featureType: 'r
+  {featureType: 'road.highway',elementType: 'geometry',stylers: [{color: '#f8c967'}]},
+  {featureType: 'road.highway',elementType: 'geometry.stroke',stylers: [{color: '#e9b
