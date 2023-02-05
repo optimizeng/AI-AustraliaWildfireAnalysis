@@ -3,4 +3,8 @@ Map.addLayer(Australia);
 Map.centerObject(Australia, 4);
 
 var startyear = 2018; //Your start year
-var endyear = 2020; //Your end ye
+var endyear = 2020; //Your end year
+var startmonth = 1;
+var endmonth = 12;
+var startdate = ee.Date.fromYMD(startyear, startmonth, 1);
+var enddate =  ee.Date.fromYMD(
