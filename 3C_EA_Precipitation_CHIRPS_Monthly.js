@@ -70,3 +70,7 @@ var mapStyle = [
   {featureType: 'road.local',elementType: 'labels.text.fill',stylers: [{color: '#806b63'}]},
   {featureType: 'water', elementType: 'geometry.fill',stylers: [{color: '#b9d3c2'}] }, 
   {featureType: 'water',elementType: 'labels.text.fill',stylers: [{color: 'blue'}]}];
+
+Map.setOptions('mapStyle', {mapStyle: mapStyle});
+
+
