@@ -11,4 +11,6 @@ var enddate =  ee.Date.fromYMD(endyear, endmonth, 1);
 var years = ee.List.sequence(startyear, endyear);
 var months = ee.List.sequence(1, 12);
 
-var sm= ee.ImageCollection('NA
+var sm= ee.ImageCollection('NASA_USDA/HSL/soil_moisture').select('ssm')
+                          .filterDate(startdate, enddate)
+                          .sort('system:time_start
