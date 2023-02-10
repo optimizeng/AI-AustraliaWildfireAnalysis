@@ -13,4 +13,8 @@ var months = ee.List.sequence(1, 12);
 
 var sm= ee.ImageCollection('NASA_USDA/HSL/soil_moisture').select('ssm')
                           .filterDate(startdate, enddate)
-                          .sort('system:time_start
+                          .sort('system:time_start', false)
+                          .filterBounds(Australia); 
+                          
+var monthlySM =  ee.ImageCollection.fromImages(
+  year
