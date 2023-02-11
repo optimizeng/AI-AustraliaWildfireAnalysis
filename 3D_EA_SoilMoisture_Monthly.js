@@ -17,4 +17,6 @@ var sm= ee.ImageCollection('NASA_USDA/HSL/soil_moisture').select('ssm')
                           .filterBounds(Australia); 
                           
 var monthlySM =  ee.ImageCollection.fromImages(
-  year
+  years.map(function (y) {
+    return months.map(function(m) {
+    return sm.filter(ee.Filter.calendarRange(y, y, 'year')).filter
