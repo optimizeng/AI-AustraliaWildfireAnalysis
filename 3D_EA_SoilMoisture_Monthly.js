@@ -26,4 +26,10 @@ var monthlySM =  ee.ImageCollection.fromImages(
 
 var monchart=ui.Chart.image.series(monthlySM, Australia, ee.Reducer.mean(), 25000)
   .setOptions({
-  title: "Monthly Soil Mo
+  title: "Monthly Soil Moisture for Australia",
+  hAxis: {title: 'Date'},
+  vAxis: {title: 'Soil Moisture (mm)'},
+  pointSize: 3,
+   
+  });
+print(
