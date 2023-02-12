@@ -19,4 +19,6 @@ var sm= ee.ImageCollection('NASA_USDA/HSL/soil_moisture').select('ssm')
 var monthlySM =  ee.ImageCollection.fromImages(
   years.map(function (y) {
     return months.map(function(m) {
-    return sm.filter(ee.Filter.calendarRange(y, y, 'year')).filter
+    return sm.filter(ee.Filter.calendarRange(y, y, 'year')).filter(ee.Filter.calendarRange(m, m, 'month')).mean().set('year', y).set('month', m).set('system:time_start', ee.Date.fromYMD(y, m, 1));
+    });
+  }).
