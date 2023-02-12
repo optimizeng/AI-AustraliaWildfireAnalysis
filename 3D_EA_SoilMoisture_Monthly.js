@@ -21,4 +21,9 @@ var monthlySM =  ee.ImageCollection.fromImages(
     return months.map(function(m) {
     return sm.filter(ee.Filter.calendarRange(y, y, 'year')).filter(ee.Filter.calendarRange(m, m, 'month')).mean().set('year', y).set('month', m).set('system:time_start', ee.Date.fromYMD(y, m, 1));
     });
-  }).
+  }).flatten()
+);
+
+var monchart=ui.Chart.image.series(monthlySM, Australia, ee.Reducer.mean(), 25000)
+  .setOptions({
+  title: "Monthly Soil Mo
