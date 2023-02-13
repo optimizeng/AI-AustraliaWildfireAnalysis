@@ -32,4 +32,4 @@ var monchart=ui.Chart.image.series(monthlySM, Australia, ee.Reducer.mean(), 2500
   pointSize: 3,
    
   });
-print(
+print(monchart);
