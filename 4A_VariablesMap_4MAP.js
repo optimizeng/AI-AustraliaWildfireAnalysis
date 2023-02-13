@@ -132,3 +132,12 @@ maps[3].setControlVisibility({scaleControl: true});
 var mapGrid = ui.Panel(
   [ ui.Panel([maps[0],maps[1]], null, {stretch: 'both'}),
     ui.Panel([maps[2],maps[3]], null, {stretch: 'both'})
+  ],
+    ui.Panel.Layout.Flow('horizontal'), {stretch: 'both'});
+
+// Add the maps and title to the ui.root.
+ui.root.widgets().reset([mapGrid]);
+//ui.root.widgets([legend]);
+
+// Center the maps near Sacramento.
+maps[0].centerObject(Australia,3.5);
