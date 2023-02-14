@@ -137,3 +137,23 @@ pan.forEach(function(name, index) {
   maps.push(map);});
 
 var linker = ui.Map.Linker(maps);
+
+maps[0].setControlVisibility({scaleControl: true});
+maps[1].setControlVisibility({scaleControl: true});
+maps[2].setControlVisibility({scaleControl: true});
+maps[3].setControlVisibility({scaleControl: true});
+
+
+// Create a grid of maps.
+var mapGrid = ui.Panel(
+  [ ui.Panel([maps[0],maps[1]], null, {stretch: 'both'}),
+    ui.Panel([maps[2],maps[3]], null, {stretch: 'both'})
+  ],
+    ui.Panel.Layout.Flow('horizontal'), {stretch: 'both'});
+
+// Add the maps and title to the ui.root.
+ui.root.widgets().reset([mapGrid]);
+//ui.root.widgets([legend]);
+
+// Center the maps near Sacramento.
+maps[0].centerObject(Australia,3.5);
