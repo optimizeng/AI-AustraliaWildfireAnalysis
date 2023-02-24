@@ -5,3 +5,5 @@
 Earth's free remotely sensed data provides a means to analyze Australian wildfires. This study investigates data from Earth observation to uncover general insights about these fires. Recent years have seen machine learning (ML) being successful in many domains because it's capable of learning from hidden relationships.
 
 In this study, the overall objective is to create an automated process of creating a fire training dataset at a continental scale, efficiently using computational resources for the ML algorithms. We mapped fire occurrence locations and no-fire occurrence locations alongside 15 fire causal factors.
+
+**We applied the training dataset to different ML algorithms, such as Random Forest (RF), Naïve Bayes, and Classification and Regression Tree (C
