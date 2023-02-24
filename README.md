@@ -6,4 +6,6 @@ Earth's free remotely sensed data provides a means to analyze Australian wildfir
 
 In this study, the overall objective is to create an automated process of creating a fire training dataset at a continental scale, efficiently using computational resources for the ML algorithms. We mapped fire occurrence locations and no-fire occurrence locations alongside 15 fire causal factors.
 
-**We applied the training dataset to different ML algorithms, such as Random Forest (RF), Naïve Bayes, and Classification and Regression Tree (C
+**We applied the training dataset to different ML algorithms, such as Random Forest (RF), Naïve Bayes, and Classification and Regression Tree (CART).**
+
+All ML approaches were trained using 70% of the wildfire dataset and tested using the remaining 30% of the dataset. The M
