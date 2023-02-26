@@ -8,4 +8,4 @@ In this study, the overall objective is to create an automated process of creati
 
 **We applied the training dataset to different ML algorithms, such as Random Forest (RF), Naïve Bayes, and Classification and Regression Tree (CART).**
 
-All ML approaches were trained using 70% of the wildfire dataset and tested using the remaining 30% of the dataset. The ML algorithm with the best performance, the RF model, helps to identify the driving factors using variable importance analysis based on ML
+All ML approaches were trained using 70% of the wildfire dataset and tested using the remaining 30% of the dataset. The ML algorithm with the best performance, the RF model, helps to identify the driving factors using variable importance analysis based on ML methods. This model can learn certain properties from a training dataset to make predictions. The results of this study reveal
