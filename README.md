@@ -11,4 +11,6 @@ In this study, the overall objective is to create an automated process of creati
 All ML approaches were trained using 70% of the wildfire dataset and tested using the remaining 30% of the dataset. The ML algorithm with the best performance, the RF model, helps to identify the driving factors using variable importance analysis based on ML methods. This model can learn certain properties from a training dataset to make predictions. The results of this study reveal the fire occurrence probability in Australia and identify the driving factors and their dynamic influence on fire occurrence. Knowing these factors, we can implement improved preventive measures in fire-prone areas to reduce fire risk in Australia..
 
 
-![Image](https://github.com/opti
+![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_1.PNG)
+
+The rest of the README goes into more depth about the data mini
