@@ -16,4 +16,8 @@ All ML approaches were trained using 70% of the wildfire dataset and tested usin
 The rest of the README goes into more depth about the data mining and pre-processing steps, the independent and dependent variables used in the model, the results of the ML models and the assessment of their accuracies, and the importance of conditioning factors in the model. Several images and graphs are included to visually illustrate these points.
 
 
-![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_2
+![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_2.PNG)
+
+![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_7.PNG)
+
+![Image](https:
