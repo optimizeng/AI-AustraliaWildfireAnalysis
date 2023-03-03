@@ -24,4 +24,8 @@ The rest of the README goes into more depth about the data mining and pre-proces
 
 ![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_3.PNG)
 
-![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/
+![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_4.PNG)
+
+![Image](https://github.com/optimizeng/AI-AustraliaWildfireAnalysis/blob/master/image/Cap_5.PNG)
+
+![Image](https://github.
